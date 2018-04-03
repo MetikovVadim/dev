@@ -1,5 +1,2 @@
-.PHONY: default
-default: deploy
-
-deploy:
-  docker run  -d --name dev_lua -p 80:80 -v "$(pwd)"/html:/nginx/html -v "$(pwd)"/nginx:/nginx/conf metikovv/devel:latest
+deploy : Dockerfile
+	docker run -d --name dev_lua2 -p 80:80 -v html:/nginx/html -v nginx:/nginx/conf metikovv/devel:latest
